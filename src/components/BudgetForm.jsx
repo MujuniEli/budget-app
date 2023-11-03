@@ -19,7 +19,7 @@ const BudgetForm = ({ handleAddBudget }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}className='budget-form'>
       <input
         type="text"
         placeholder="Budget title"
