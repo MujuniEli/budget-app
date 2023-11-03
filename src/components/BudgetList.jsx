@@ -12,16 +12,16 @@ const BudgetList = () => {
   return (
     <div>
       <h1>Budget List</h1>
-      <BudgetForm onAddBudget={handleAddBudget} />
-      <ul>
-        {budgets.map((budget) => (
-          <div key={budget.id}>
-            <h2>{budget.title}</h2>
+      <BudgetForm handleAddBudget={handleAddBudget} />
+      
+        {budgets.map((budget, index) => (
+          <div key={index}>
+            <h2>{budget.budgetTitle}</h2>
              <p>{budget.budget}</p>
              <p>{budget.spent}</p>
           </div>
         ))}
-      </ul>
+      
     </div>
   );
 };

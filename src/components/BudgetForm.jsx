@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 const BudgetForm = ({ handleAddBudget }) => {
   const [budgetTitle, setBudgetTitle] = useState('');
-  const [budget, setBudget] = useState(0);
-  const [spent, setSpent] = useState(0);
+  const [budget, setBudget] = useState("");
+  const [spent, setSpent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,8 +14,8 @@ const BudgetForm = ({ handleAddBudget }) => {
 
     // Reset the form
     setBudgetTitle('');
-    setBudget(0);
-    setSpent(0);
+    setBudget("");
+    setSpent("");
   };
 
   return (
@@ -38,7 +38,7 @@ const BudgetForm = ({ handleAddBudget }) => {
         value={spent}
         onChange={(e) => setSpent(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">Add Budget</button>
     </form>
   );
 };
