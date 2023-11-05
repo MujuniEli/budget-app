@@ -22,7 +22,7 @@ const BudgetProgressBar = ({ budget }) => {
 
   return (
     <div className="budget">
-        <h2>{budget.budgetTitle}</h2>
+        <h2>{budget.title}</h2>
         <div className="budget-progress-bar">
         <div className="inner" style={{ width: `${progress * 100}%`, backgroundColor: progressBarColor() }}></div>
         <span>Budget: {budget.budget} | Spent: {budget.spent}</span>

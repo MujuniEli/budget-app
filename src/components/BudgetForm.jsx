@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 
 const BudgetForm = ({ handleAddBudget }) => {
-  const [budgetTitle, setBudgetTitle] = useState('');
+  const [title, setTitle] = useState('');
   const [budget, setBudget] = useState("");
   const [spent, setSpent] = useState("");
 
@@ -10,10 +10,10 @@ const BudgetForm = ({ handleAddBudget }) => {
     e.preventDefault();
 
     // Add the new budget to the array of budgets
-    handleAddBudget({ budgetTitle, budget, spent })
+    handleAddBudget({ title, budget, spent })
 
     // Reset the form
-    setBudgetTitle('');
+    setTitle('');
     setBudget("");
     setSpent("");
   };
@@ -23,8 +23,8 @@ const BudgetForm = ({ handleAddBudget }) => {
       <input
         type="text"
         placeholder="Budget title"
-        value={budgetTitle}
-        onChange={(e) => setBudgetTitle(e.target.value)}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
       <input
         type="number"
