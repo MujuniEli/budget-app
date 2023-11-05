@@ -11,19 +11,21 @@ const BudgetProgressBar = ({ budget }) => {
   }, [budget.spent]);
 
   const progressBarColor = () => {
-    if (progress > 1) {
+    if (progress >= 1) {
       return 'red';
+    } else if (progress >= 0.75) {
+      return 'orange';
     } else {
-      return '#6c5b7b';
+      return 'green';
     }
   };
 
   return (
     <div className="budget">
-        <h2 className="budget-title">{budget.title}</h2>
+        <h2>{budget.title}</h2>
         <div className="budget-progress-bar">
         <div className="inner" style={{ width: `${progress * 100}%`, backgroundColor: progressBarColor() }}></div>
-        <p className="budget-info">Budget: {budget.budget} | Spent: {budget.spent}</p>
+        <span>Budget: {budget.budget} | Spent: {budget.spent}</span>
         </div>
     </div>
   );
