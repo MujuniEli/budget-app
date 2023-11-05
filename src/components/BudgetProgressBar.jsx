@@ -6,26 +6,24 @@ const BudgetProgressBar = ({ budget }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const newProgress = budget.spent / budget.budget;
+    const newProgress = Math.min(budget.spent / budget.budget, 1);
     setProgress(newProgress);
   }, [budget.spent]);
 
   const progressBarColor = () => {
-    if (progress >= 1) {
+    if (progress > 1) {
       return 'red';
-    } else if (progress >= 0.75) {
-      return 'orange';
     } else {
-      return 'green';
+      return '#6c5b7b';
     }
   };
 
   return (
     <div className="budget">
-        <h2>{budget.title}</h2>
+        <h2 className="budget-title">{budget.title}</h2>
         <div className="budget-progress-bar">
         <div className="inner" style={{ width: `${progress * 100}%`, backgroundColor: progressBarColor() }}></div>
-        <span>Budget: {budget.budget} | Spent: {budget.spent}</span>
+        <p className="budget-info">Budget: {budget.budget} | Spent: {budget.spent}</p>
         </div>
     </div>
   );

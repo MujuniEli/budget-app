@@ -66,7 +66,7 @@ const BudgetList = () => {
 
   return (
     <div>
-      <h1>Budget List</h1>
+      <h1>Budget Tracker</h1>
       <BudgetForm handleAddBudget={handleAddBudget} />
       
         {budgets.map((budget, index) => (
